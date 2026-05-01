@@ -192,7 +192,7 @@ def evaluate_return(order_id: str) -> str:
                 f"The window expired {days_since - 14} days ago."
             )
 
-    # Rule 3: Nocturne → 21-day extended window (FIX: checked BEFORE sale rule)
+    # Rule 3: Nocturne → 21-day extended window If the item is also a sale item, the refund is issued as store credit; otherwise, a full refund is given.
     if vendor == 'Nocturne':
         window = 21
         refund_type = "Store Credit" if is_sale else "Full Refund"
@@ -211,7 +211,7 @@ def evaluate_return(order_id: str) -> str:
                 f"Reason: Nocturne's extended 21-day return window has expired by {days_since - window} days."
             )
 
-    # Rule 4: Sale item → 7-day window, store credit only
+    # Rule 4: Sale item → returnable 7-day window for store credit only
     if is_sale:
         window = 7
         if days_since <= window:
