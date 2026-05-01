@@ -142,15 +142,14 @@ def _make_shopping_task(user_input):
             "Your job:\n"
             "1. Parse what they want: occasion, style tags, size, budget, sale preference.\n"
             "2. Call search_products with the appropriate filters (size as a string, e.g. '8').\n"
-            "3. If they mention a specific Product ID (e.g. P0042), call get_product instead.\n"
-            "4. Present the top results in a clear, friendly format.\n"
-            "5. Explain WHY each product fits their request — reference tags, price, stock, score.\n"
-            "6. Never invent product details. Only use what the tools return."
+            "3. Present the top results clearly, listing out the product ID, title, price, tags, and stock for the requested size in the Final Answer.\n"
+            "4. Explain WHY each product fits their request — reference tags, price, stock, score.\n"
+            "5. Never invent product details. Only use what the tools return."
         ),
         expected_output=(
             "A warm, clear shopping recommendation listing matching products with their "
             "names, prices, tags, sale status, and stock for the requested size. "
-            "Include a brief reasoning paragraph explaining why these were chosen."
+            "You MUST include the specific product data (ID, Title, Price, and Stock) in the final response."
         ),
         agent=shopper_agent
     )

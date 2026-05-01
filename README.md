@@ -109,7 +109,7 @@ Use these to test all parts of the assignment:
 
 | # | Type | Query |
 |---|------|-------|
-| 1 | Shopping | `I need a modest evening gown under $300 in size 8, preferably on sale` |
+| 1 | Shopping | `Find me a modest evening gown under $300 in size 8, preferably on sale` |
 | 2 | Shopping | `Find me a sale cocktail dress in size 12 under $250` |
 | 3 | Support | `Can I return order O0005? It doesn't fit` |
 | 4 | Support | `I want to exchange order O0003 for a different size` |
